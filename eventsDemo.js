@@ -80,12 +80,17 @@ bobby.listenForHit(hammer);
 linda.listenForHit(hammer);
 hulk.listenForHit(hammer);
 
+console.log('\nhammer "hit", strength 0\n');
 hammer.emit("hit", 0); // all laugh()
+console.log('\nhammer "hit", strength 2\n');
 hammer.emit("hit", 2); // bobby & hulk wince(), linda swear()
+console.log('\nhammer "hit", strength 5\n');
 hammer.emit("hit", 5); // bobby swear(), linda die(), hulk wince()
+console.log('\nhammer "hit", strength 10\n');
 hammer.emit("hit", 10); // bobby die(), hulk swear()
+console.log('\nhammer "hit", strength 20\n');
 hammer.emit("hit", 20); // hulk die()
 
 //all dead, nothing will happen on next emit
-console.log("all dead, no one left to react");
+console.log("\nall dead, no one left to react");
 hammer.emit("hit", 10); // nothing happens
